@@ -1,12 +1,15 @@
-def insertion_sort(num_list):
-    for i in range(1, len(num_list)):
-        temp = num_list[i]
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        temp = arr[i]
         j = i - 1
-        while temp < num_list[j] and j >= 0:
-            num_list[j + 1] = num_list[j]
-            num_list[j] = temp
+
+        while j >= 0 and temp < arr[j]:
+            arr[j + 1] = arr[j]
             j -= 1
-    return num_list
+
+        arr[j + 1] = temp
+
+    return arr
 
 
-print(insertion_sort([4, 2, 5, 8, 1, 3, 2]))
+print(insertion_sort([4, 2, 5, 8, 1, 3, 2, 0]))

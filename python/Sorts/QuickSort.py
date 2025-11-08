@@ -1,29 +1,34 @@
-def swap(my_list, index1, index2):
-    my_list[index1], my_list[index2] = my_list[index2], my_list[index1]
+def swap(arr, index1, index2):
+    arr[index1], arr[index2] = arr[index2], arr[index1]
 
 
-def pivot(my_list, pivot_index, end_index):
+def pivot(arr, pivot_index, end_index):
     swap_index = pivot_index
 
     for i in range(pivot_index + 1, end_index + 1):
-        if my_list[i] < my_list[pivot_index]:
+        if arr[i] < arr[pivot_index]:
             swap_index += 1
-            swap(my_list, swap_index, i)
+            swap(arr, swap_index, i)
 
-    swap(my_list, pivot_index, swap_index)
+    swap(arr, pivot_index, swap_index)
+
     return swap_index
 
 
-def quick_sort_helper(my_list, left, right):
+def quick_sort_helper(arr, left, right):
     if left < right:
-        pivot_index = pivot(my_list, left, right)
-        quick_sort_helper(my_list, left, pivot_index - 1)
-        quick_sort_helper(my_list, pivot_index + 1, right)
-    return my_list
+        pivot_index = pivot(arr, left, right)
+        quick_sort_helper(arr, left, pivot_index - 1)
+        quick_sort_helper(arr, pivot_index + 1, right)
+
+    return arr
 
 
-def quick_sort(my_list):
-    return quick_sort_helper(my_list, 0, len(my_list) - 1)
+def quick_sort(arr):
+    if len(arr) < 2:
+        return arr
+
+    return quick_sort_helper(arr, 0, len(arr) - 1)
 
 
-print(quick_sort([3, 2, 4, 1]))
+print(quick_sort([4, 2, 5, 8, 1, 3, 2, 0]))

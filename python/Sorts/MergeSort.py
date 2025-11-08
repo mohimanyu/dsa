@@ -1,39 +1,37 @@
-def merge(list1, list2):
+def merge(left, right):
     combined = []
     i = 0
     j = 0
 
-    while i < len(list1) and j < len(list2):
-        if list1[i] < list2[j]:
-            combined.append(list1[i])
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            combined.append(left[i])
             i += 1
         else:
-            combined.append(list2[j])
+            combined.append(right[j])
             j += 1
 
-    while i < len(list1):
-        combined.append(list1[i])
+    while i < len(left):
+        combined.append(left[i])
         i += 1
-    while j < len(list2):
-        combined.append(list2[j])
+
+    while j < len(right):
+        combined.append(right[j])
         j += 1
 
     return combined
 
 
-def merge_sort(my_list):
-    if len(my_list) == 0:
-        return
+def merge_sort(arr):
+    if len(arr) < 2:
+        return arr
 
-    if len(my_list) == 1:
-        return my_list
+    mid = len(arr) // 2
 
-    mid_index = len(my_list) // 2
-
-    left = merge_sort(my_list[:mid_index])
-    right = merge_sort(my_list[mid_index:])
+    left = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
 
     return merge(left, right)
 
 
-print(merge_sort([4, 1, 3, 2]))
+print(merge_sort([4, 2, 5, 8, 1, 3, 2, 0]))
