@@ -33,12 +33,12 @@ def shortest_dist_to_char(s, c):
     for i in range(n):
         if s[i] == c:
             prev = i
-        dist[i] = i - prev
+        dist[i] = abs(i - prev)
 
     for i in range(n - 1, -1, -1):
         if s[i] == c:
             prev = i
-        dist[i] = min(dist[i], prev - i)
+        dist[i] = min(dist[i], abs(prev - i))
 
     return dist
 
