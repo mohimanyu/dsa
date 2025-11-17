@@ -1,3 +1,11 @@
+# LL: Find Middle Node ( ** Interview Question)
+# Implement the find_middle_node method for the LinkedList class.
+
+# Note: this LinkedList implementation does not have a length member variable.
+
+# If the linked list has an even number of nodes, return the first node of the second half of the list.
+
+
 class Node:
     def __init__(self, value):
         self.value = value
@@ -12,7 +20,7 @@ class LinkedList:
 
     def append(self, value):
         new_node = Node(value)
-        if self.head == None:
+        if not self.head:
             self.head = new_node
             self.tail = new_node
         else:
@@ -23,7 +31,7 @@ class LinkedList:
     def find_middle_node(self):
         slow = self.head
         fast = self.head
-        while fast is not None and fast.next is not None:
+        while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
         return slow

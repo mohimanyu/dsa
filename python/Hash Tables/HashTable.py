@@ -6,6 +6,7 @@ class HashTable:
         my_hash = 0
         for letter in key:
             my_hash = (my_hash + ord(letter) * 13) % len(self.data_map)
+
         return my_hash
 
     def print_table(self):
@@ -14,24 +15,29 @@ class HashTable:
 
     def set_item(self, key, value):
         index = self.__hash(key)
-        if self.data_map[index] is None:
+
+        if not self.data_map[index]:
             self.data_map[index] = []
+
         self.data_map[index].append([key, value])
 
     def get_item(self, key):
         index = self.__hash(key)
-        if self.data_map[index] is not None:
+
+        if self.data_map[index]:
             for item in self.data_map[index]:
                 if item[0] == key:
                     return item[1]
+
         return None
 
     def keys(self):
         all_keys = []
         for items_arr in self.data_map:
-            if items_arr is not None:
+            if items_arr:
                 for item in items_arr:
                     all_keys.append(item[0])
+
         return all_keys
 
 

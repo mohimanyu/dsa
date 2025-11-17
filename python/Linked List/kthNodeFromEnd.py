@@ -1,3 +1,21 @@
+# LL: Find Kth Node From End ( ** Interview Question)
+# Implement the find_kth_from_end function, which takes the LinkedList (ll) and an integer k as input, and returns the k-th node from the end of the linked list WITHOUT USING LENGTH.
+
+
+# NOTE: This is a SEPARATE FUNCTION that is NOT a method within the LinkedList class.  This means you need to indent the function all the way to the LEFT.
+
+
+# Given this LinkedList:
+
+# 1 -> 2 -> 3 -> 4 -> 5
+
+# If k=1 then return the first node from the end (the last node) which contains the value of 5.
+
+# If k=2 then return the second node from the end which contains the value of 4, etc.
+
+# If the index is out of bounds, the program should return None.
+
+
 class Node:
     def __init__(self, value):
         self.value = value

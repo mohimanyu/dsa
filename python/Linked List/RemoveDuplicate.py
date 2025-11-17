@@ -1,3 +1,10 @@
+# LL: Remove Duplicates ( ** Interview Question)
+# You are given a singly linked list that contains integer values, where some of these values may be duplicated.
+
+# Note: this linked list class does NOT have a tail which will make this method easier to implement.
+
+
+# Your task is to implement a method called remove_duplicates() within the LinkedList class that removes all duplicate values from the list.
 class Node:
     def __init__(self, value):
         self.value = value

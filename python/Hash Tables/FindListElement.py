@@ -1,3 +1,6 @@
+# Write a function item_in_common(list1, list2) that takes two lists as input and returns True if there is at least one common item between the two lists, False otherwise.
+
+
 def item_in_common(list1, list2):
     my_dict = {}
     for i in list1:
@@ -6,6 +9,7 @@ def item_in_common(list1, list2):
     for j in list2:
         if j in my_dict:
             return j, True
+
     return False
 
 
