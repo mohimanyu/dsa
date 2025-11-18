@@ -10,7 +10,7 @@ class RecursiveBST:
         self.root = None
 
     def __r_insert(self, current_node, value):
-        if current_node == None:
+        if not current_node:
             current_node = Node(value)
         if value < current_node.value:
             current_node.left = self.__r_insert(current_node.left, value)
