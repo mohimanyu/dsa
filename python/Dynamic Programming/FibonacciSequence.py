@@ -2,7 +2,7 @@ memo = [None] * 100
 
 
 def fibonacci_top_down(n):
-    if memo[n] is not None:
+    if memo[n]:
         return memo[n]
 
     if n == 0 or n == 1:
