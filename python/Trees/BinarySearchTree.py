@@ -116,6 +116,6 @@ my_tree.insert(52)
 my_tree.insert(82)
 
 # print(my_tree.BFS())
-# print(my_tree.dfs_pre_order())
+print(my_tree.dfs_pre_order())
 # print(my_tree.dfs_post_order())
-print(my_tree.dfs_in_order())
+# print(my_tree.dfs_in_order())
