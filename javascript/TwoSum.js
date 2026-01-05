@@ -1,15 +1,15 @@
 function twoSum(arr, target) {
-    let set = new Set();
+  let set = new Set();
 
-    for (let num of arr) {
-        let complement = target - num;
+  for (let num of arr) {
+    let complement = target - num;
 
-        if (set.has(complement)) return true;
+    if (set.has(complement)) return true;
 
-        set.add(num);
-    }
+    set.add(num);
+  }
 
-    return false;
+  return false;
 }
 
 let arr = [10, 15, 3, 7];
